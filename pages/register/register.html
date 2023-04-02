@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><img src="/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png"></div>
+            <div class="barnav">
+              <div><a href="../index.html">Tienda</a></div>
+              <div><a href="../about-us/about-us.html">Nosotros</a></div>
+              <div><a href="../contact/contact.html">Contacto</a></div>
+              <div><a href="../login/login.html">Cuenta</a></div>
+            </div>
+        </nav>
+    </header>
+       
+    <div class="container">
+        <div class="title">Registro</div>
+        <div class="content">
+          <form action="#">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Nombre Completo</span>
+                <input type="text" minlength="8" placeholder="Ingrese su nombre completo" required>
+              </div>
+              <div class="input-box">
+                <span class="details">DNI</span>
+                <input type="text" minlength="8" maxlength="10" placeholder="Ingrese su DNI" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" minlength="12" placeholder="Ingrese su email" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Teléfono</span>
+                <input type="text" placeholder="Ingrese su teléfono" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Contraseña</span>
+                <input type="password" minlength="8" placeholder="Ingrese su contraseña" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Confirmar contraseña</span>
+                <input type="password" minlength="8" placeholder="Confirme su contraseña" required>
+              </div>
+            </div>
+            
+            <div class="gender-details">
+              <input type="radio" name="gender" id="dot-1">
+              <input type="radio" name="gender" id="dot-2">
+              <input type="radio" name="gender" id="dot-3">
+              <span class="gender-title">Género</span>
+              <div class="category">
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Femenino</span>
+                </label>
+                <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Masculino</span>
+                </label>
+                <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span class="gender">Prefiero no decirlo</span>
+                </label>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="Registrarse">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="wa-container">
+        <a href="https://wa.me/51998001467" class="wa-link">
+          <img src="../../img/logo/logo-whatsapp-png-46048.png" style="height: 70px;"/>
+            <!-- <i style="background-color: rgba(236, 249, 255,0.8); box-shadow: 0px 15px 20px rgba(8, 17, 13, 0.4);
+            border-radius: 100%;" class="fa-brands fa-whatsapp"></i> -->
+        </a>
+      </div>
+</body>
+</html>
