@@ -98,7 +98,7 @@ function renderizarTabla() {
                             <td class="t-table-cart product__stock">${producto.stock}</td>
                             <td class="t-table-cart-x product__actions">
                                 <i class='fa fa-edit' data-bs-toggle="modal" data-bs-target="#exampleModal" style='color: blue' onclick="editProduct(${index})" data-bs-whatever="producto"></i>
-                                <i class='fa fa-trash' style='color: red'></i>
+                                <i class='fa fa-trash' style='color: red' onclick="deleteProduct(${index})"></i>
                             </td>
                         </tr>`
         tablebody.innerHTML += tableRow;
@@ -201,6 +201,34 @@ function editProduct(ix) {
     
     index = ix;
 
+}
+
+function deleteProduct(ix) {
+    
+    Swal.fire({
+        title: '¿Eliminar producto?',
+        icon: 'warning',
+        showCancelButton: true,
+        background: '#fff',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Eliminar producto
+            Products = Products.filter((item) => item !== Products[ix]);
+            // Guardar cambios
+            localStorage.setItem('products', JSON.stringify(Products));
+        
+            renderizarTabla();
+
+          Swal.fire({
+            title: 'Producto eliminado!',
+            icon: 'success',
+            background: '#fff'
+          })
+        }
+      })
 }
 
 function reset() {

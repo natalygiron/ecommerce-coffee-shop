@@ -185,3 +185,7 @@ border-radius: 5px;
 background:#B37F87;
 color: #fff;
 }
+
+.swal2-title {
+    color:#272727 !important;
+}
