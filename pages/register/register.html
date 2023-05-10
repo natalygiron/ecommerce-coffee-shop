@@ -27,31 +27,31 @@
     <div class="container">
         <div class="title">Registro</div>
         <div class="content">
-          <form action="#">
+          <form id="registerForm">
             <div class="user-details">
               <div class="input-box">
                 <span class="details">Nombre Completo</span>
-                <input type="text" minlength="8" placeholder="Ingrese su nombre completo" required>
+                <input type="text" name="fullname" minlength="8" placeholder="Ingrese su nombre completo" required>
               </div>
               <div class="input-box">
                 <span class="details">DNI</span>
-                <input type="text" minlength="8" maxlength="10" placeholder="Ingrese su DNI" required>
+                <input type="text" name="dni" minlength="8" maxlength="10" placeholder="Ingrese su DNI" required>
               </div>
               <div class="input-box">
                 <span class="details">Email</span>
-                <input type="text" minlength="12" placeholder="Ingrese su email" required>
+                <input type="text" name="email" minlength="12" placeholder="Ingrese su email" required>
               </div>
               <div class="input-box">
                 <span class="details">Teléfono</span>
-                <input type="text" placeholder="Ingrese su teléfono" required>
+                <input type="text" name="phone" placeholder="Ingrese su teléfono" required>
               </div>
               <div class="input-box">
                 <span class="details">Contraseña</span>
-                <input type="password" minlength="8" placeholder="Ingrese su contraseña" required>
+                <input type="password" name="password" minlength="8" placeholder="Ingrese su contraseña" required>
               </div>
               <div class="input-box">
                 <span class="details">Confirmar contraseña</span>
-                <input type="password" minlength="8" placeholder="Confirme su contraseña" required>
+                <input type="password" name="confirm_password" minlength="8" placeholder="Confirme su contraseña" required>
               </div>
             </div>
             
@@ -75,10 +75,13 @@
                 </label>
               </div>
             </div>
+            <!-- <div class="button">
+              <input type="submit" id="registerbtn" value="Registrarse">
+            </div> -->
             <div class="button">
-              <input type="submit" value="Registrarse">
+              <button type="submit" id="registerbtn">Registrarse</button>
             </div>
-          </form>
+            </form>
         </div>
       </div>
       <div class="wa-container">
@@ -86,5 +89,7 @@
           <img src="../../assets/img/logo/logo-whatsapp-png-46048.png" style="height: 70px;"/>
         </a>
       </div>
+
+      <script src="/js/register.js"></script>
 </body>
 </html>

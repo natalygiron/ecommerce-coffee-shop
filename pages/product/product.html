@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/about-us.css">
+    <link rel="stylesheet" href="/css/product.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
 <body>
-
     <header>
         <nav>
             <div class="logo"><img src="../../assets/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png"></div>
@@ -23,10 +22,80 @@
             </div>
         </nav>
     </header>
-       
     <div class="container">
-      <div class="content">
-        <p>Sobre nosotros</p>
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img data-image="black" src="../../assets/img/products/espumadora-predrini-p9.jpg" alt="">
+        <img data-image="blue" src="../../assets/img/products/cup-chocolatto-p7.jpg" alt="">
+        <img data-image="red" class="active" src="../../assets/img/products/cup-latte-p6.jpg" alt="">
+      </div>
+    
+      <!-- Right Column -->
+      <div class="right-column">
+    
+        <!-- Product Description -->
+        <div class="product-description">
+          <span>Tazas</span>
+          <h1>Espumadora PEDRINI</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit hic officia corporis unde quae ducimus autem minima voluptates beatae tempora. Ipsam nobis suscipit at eveniet!</p>
+        </div>
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+          <!-- Product size -->
+          <div class="cable-config">
+            <span>Elige una opción</span>
+            <div class="cable-choose">
+              <button>480 ml</button>
+              <button>300 ml</button>
+              <!-- <button>Long-coiled</button> -->
+            </div>
+          </div>
+          <span>Existencias: 30 disponibles</span>
+          <!-- Product Color -->
+          <div class="product-amount">
+            <span>Cantidad</span>
+    
+            <div class="amount-choose">
+              <div>
+                <input type="number" id="amount" name="amount" value="1" checked><label for="amount"><span></span></label>
+              </div>    
+          </div>
+
+          <!-- Product Color -->
+          <!-- <div class="product-color">
+            <span>Color</span>
+            <div class="color-choose">
+              <div>
+                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                <label for="red"><span></span></label>
+              </div>
+              <div>
+                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                <label for="blue"><span></span></label>
+              </div>
+              <div>
+                <input data-image="black" type="radio" id="black" name="color" value="black">
+                <label for="black"><span></span></label>
+              </div>
+            </div>
+          </div> -->
+          <!-- Cable Configuration -->
+          <!-- <div class="cable-config">
+            <span>Cable configuration</span>
+    
+            <div class="cable-choose">
+              <button>Straight</button>
+              <button>Coiled</button>
+              <button>Long-coiled</button>
+            </div>
+            <a href="#">How to configurate your headphones</a>
+          </div> -->
+        </div>
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span>s/39.00</span>
+          <a href="#" class="cart-btn">Añadir al carrito</a>
+        </div>
       </div>
     </div>
 
