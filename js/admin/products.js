@@ -65,7 +65,7 @@ let Products = [
     }
 ];
 
-let productList = JSON.parse(localStorage.getItem('products')) || localStorage.setItem('products', JSON.stringify(Products));;
+let productList = JSON.parse(localStorage.getItem('products')) || localStorage.setItem('products', JSON.stringify(Products));
 
 let index=0;
 let edit=false;
