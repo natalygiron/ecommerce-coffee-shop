@@ -1,7 +1,7 @@
 let cart = JSON.parse(localStorage.getItem('carrito'));
 
 let content = document.querySelector('.cart-content');
-console.log(content)
+// console.log(content)
 
 function renderizarCarrito() {
 
@@ -22,14 +22,14 @@ function renderizarCarrito() {
                             <td class="t-table-cart" class="name">${item.name}</td>
                             <td class="t-table-cart">${item.description}</td>
                             <td class="t-table-cart qnt-btn">
-                                <i class="far fa-minus-square btn-minus"></i>
+                                <i class="far fa-minus-square btn-minus" onclick='editQuantity(${index})'></i>
                                 <p id="quantity" name="quantity" class="input-quantity-cart" >${item.quantity}</p>
                                 <i class="far fa-plus-square btn-plus"></i>
                             </td>
                             <td class="t-table-cart">S/${item.price}</td>
                             <td class="t-table-cart">S/${item_total}</td>
                             <td class="t-table-cart-x">
-                                <i class='fa fa-times-circle'></i>
+                                <i class='fa fa-times-circle' onclick=deleteProduct(${index})></i>
                             </td>
                         </tr>`
                             // onclick='console.log("${index}")'
@@ -42,3 +42,40 @@ function renderizarCarrito() {
 
 renderizarCarrito();
 
+function deleteProduct(ix) {
+    
+    Swal.fire({
+        title: '¿Eliminar producto?',
+        icon: 'warning',
+        showCancelButton: true,
+        background: '#fff',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Eliminar producto
+            cart = cart.filter((item) => item !== cart[ix]);
+            // Guardar cambios ls
+            localStorage.setItem('carrito', JSON.stringify(cart));
+        
+            renderizarCarrito();
+
+        //   Swal.fire({
+        //     title: 'Producto eliminado!',
+        //     icon: 'success',
+        //     background: '#fff'
+        //   })
+        }
+      })
+}
+
+function editQuantity(ix, type) {
+
+    let item = cart[ix];
+    item.quantity-=1;
+    
+    localStorage.setItem('carrito', JSON.stringify(cart));
+    renderizarCarrito();
+
+}
