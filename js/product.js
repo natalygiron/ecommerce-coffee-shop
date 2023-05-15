@@ -31,4 +31,5 @@ function renderizarCatalogo() {
     });
 
 }
+
 renderizarCatalogo();

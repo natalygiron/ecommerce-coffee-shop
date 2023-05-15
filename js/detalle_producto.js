@@ -15,10 +15,8 @@ function getProduct() {
     let imageSrc = product.image ? product.image : '/assets/img/products/no-product.png';
 
     const item = `
-                <!-- Left Column / Headphones Image -->
+                <!-- Left Column -->
                 <div class="left-column">
-                    <img data-image="black" src="../../assets/img/products/espumadora-predrini-p9.jpg" alt="">
-                    <img data-image="blue" src="../../assets/img/products/cup-chocolatto-p7.jpg" alt="">
                     <img data-image="red" class="active" src="${imageSrc}" alt="">
                 </div>
             
@@ -70,15 +68,34 @@ getProduct();
 
 function addCarrito() {
 
+    let user = JSON.parse(localStorage.getItem('myUser'));
+    if (!user) {
+        Swal.fire({
+            title: 'No has iniciado sesión',
+            text: 'Necesitas iniciar sesión para realizar esta acción',
+            icon: 'info',
+            showCancelButton: true,
+            background: '#fff',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Iniciar sesión'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.replace('/pages/login/login.html');
+            }
+          }) 
+    }
+
     let oki = false;
     let newProduct = {
         id,
         name: product.name,
         price: product.price,
         quantity: Number(document.getElementById('amount').value),
-        image: product.image
+        image: product.image,
+        user: user.email
     };
-    console.log('hola')
+    
     for (let item in carrito) {
         if (carrito[item].id == id){
             oki = true;
@@ -88,6 +105,14 @@ function addCarrito() {
     if (!oki) carrito.push(newProduct);
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        background: '#fff',
+        title: 'Tu producto ha sido agregado al carrito',
+        showConfirmButton: false,
+        timer: 50000
+    })
 }
 
 

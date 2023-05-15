@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/cart.css">
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <!-- Include a required theme -->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <div class="logo"><img src="../../assets/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png"></div>
+            <div class="barnav">
+              <div><a href="../../index.html">Tienda</a></div>
+              <div><a href="../about-us/about-us.html">Nosotros</a></div>
+              <div><a href="../contact/contact.html">Contacto</a></div>
+              <div id="account"><a href="../login/login.html">Cuenta</a></div>
+              <div><a href="../cart/cart.html"><i class="fa fa-shopping-cart"></i></a></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Configuración carrito -->
+    <div class="container">
+		<div class="main">
+        	<div class="container-cart">
+            	<h1>Mi Pedido Actual:</h1>
+                <table class="table-cart">
+                    <thead>
+                        <tr>
+                          <th class="th-table-cart">Image</th>
+                          <th class="th-table-cart">Producto</th>
+                          <th class="th-table-cart">Descripción</th>
+                          <th class="th-table-cart">Cantidad</th>
+                          <th class="th-table-cart">Precio</th>
+                          <th class="th-table-cart">Subtotal</th>
+                          <th class="th-table-cart"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="cart-content">
+                        <!-- <tr>
+                        <td class="t-table-cart-img"><img src="https://aromacoffee-ecommerce.netlify.app/assets/img/products/cup-brownie-p3.jpg" class="img-cart"/></td>
+                        <td class="t-table-cart">Tomatodo Brownie</td>
+                        <td class="t-table-cart">Proin nibh turpis, pharetra eget enim a, interdum porta eros. Quisque molestie mauris eget enim ultricies vulputate. Etiam ac fringilla arcu. Nunc lacinia dapibus condimentum.</td>
+                        <td class="t-table-cart qnt-btn">
+                            <i class="far fa-minus-square btn-minus"></i>
+                            <p id="quantity" name="quantity" class="input-quantity-cart" >2</p>
+                            <i class="far fa-plus-square btn-plus"></i>
+                        </td>
+                        <td class="t-table-cart">S/32.90</td>
+                        <td class="t-table-cart">S/65.8</td>
+                        <td class="t-table-cart-x"><i class='fa fa-times-circle'></i></td>
+                        </tr> -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th class="th-table-cart"></th>
+                            <th class="th-table-cart"></th>
+                            <th class="th-table-cart"></th>
+                            <th class="th-table-cart"></th>
+                            <th class="th-table-cart">Total</th>
+                            <th class="th-table-cart total"></th>
+                            <th class="th-table-cart"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <div class="container-cart-button">
+                	<a href="#" class="button-cart">Finalizar Commpra</a>                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wa-container">
+        <a href="https://wa.me/51998001467" class="wa-link">
+          <img src="../../assets/img/logo/logo-whatsapp-png-46048.png" style="height: 70px;"/>
+        </a>
+    </div>
+  
+    <script src="/js/cart.js"></script>
+    <script src="/js/header.js"></script>
+
+</body>
+</html>

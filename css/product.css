@@ -150,7 +150,9 @@ html, body {
     display: inline-block;
   }
    
-
+.swal2-title {
+  color:#323232 !important;
+}
 
   /* Responsive */
 @media (max-width: 940px) {
