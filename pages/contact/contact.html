@@ -1,85 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/contact.css">
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-    <!-- Include a required theme -->
-    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-</head>
-<body>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contacto</title>
+      <link rel="stylesheet" href="/css/styles.css">
+      <link rel="stylesheet" href="/css/contact.css">
+      <!-- Fontawesome CDN Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+      <!-- Include a required theme -->
+      <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
-    <header>
-        <nav>
-            <div class="logo"><img src="../../assets/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png"></div>
-            <div class="barnav">
-              <div><a href="../../index.html">Tienda</a></div>
-              <div><a href="../about-us/about-us.html">Nosotros</a></div>
-              <div><a href="../contact/contact.html">Contacto</a></div>
-              <div id="account"><a href="../login/login.html">Cuenta</a></div>
-              <div><a href="#"><i class="fa fa-shopping-cart"></i></a></div>
+      <!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+
+      <header>
+          <nav>
+              <div class="logo"><img src="../../assets/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png"></div>
+              <div class="barnav">
+                <div><a href="/index.html">Tienda</a></div>
+                <div><a href="/pages/about-us/about-us.html">Nosotros</a></div>
+                <div><a href="/pages/contact/contact.html">Contacto</a></div>
+                <div id="account"><a href="/pages/login/login.html">Cuenta</a></div>
+                <div><a><i class="fa fa-shopping-cart"></i></a></div>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-cog"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/pages/admin/admin_user.html">Administrador usuarios</a></li>
+                    <li><a class="dropdown-item" href="/pages/admin/admin_product.html">Administrador productos</a></li>
+                  </ul>
+                </div>
+              </div>
+          </nav>
+      </header>
+        
+      <div class="container">
+        <div class="content">
+          <div class="left-side">
+            <div class="address details">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="topic">Dirección</div>
+              <div class="text-one">Lima, Perú</div>
+              <div class="text-two">Javier Prado 123</div>
             </div>
-        </nav>
-    </header>
-       
-    <div class="container">
-      <div class="content">
-        <div class="left-side">
-          <div class="address details">
-            <i class="fas fa-map-marker-alt"></i>
-            <div class="topic">Dirección</div>
-            <div class="text-one">Lima, Perú</div>
-            <div class="text-two">Javier Prado 123</div>
+            <div class="phone details">
+              <i class="fas fa-phone-alt"></i>
+              <div class="topic">Celular</div>
+              <div class="text-one">+51 987 654 321</div>
+              <div class="text-two">+51 976 431 825</div>
+            </div>
+            <div class="email details">
+              <i class="fas fa-envelope"></i>
+              <div class="topic">Email</div>
+              <div class="text-one">aromacoffee@gmail.com</div>
+              <div class="text-two">info.aromacoffee@gmail.com</div>
+            </div>
           </div>
-          <div class="phone details">
-            <i class="fas fa-phone-alt"></i>
-            <div class="topic">Celular</div>
-            <div class="text-one">+51 987 654 321</div>
-            <div class="text-two">+51 976 431 825</div>
-          </div>
-          <div class="email details">
-            <i class="fas fa-envelope"></i>
-            <div class="topic">Email</div>
-            <div class="text-one">aromacoffee@gmail.com</div>
-            <div class="text-two">info.aromacoffee@gmail.com</div>
-          </div>
+          <div class="right-side">
+            <div class="topic-text">Habla con nosotros</div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam aliquid animi explicabo tempore corrupti suscipit eveniet libero.</p>
+          <form action="#">
+            <div class="input-box">
+              <input type="text" placeholder="Enter your name">
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Enter your email">
+            </div>
+            <div class="input-box message-box">
+              <textarea></textarea>
+            </div>
+            
+            <div class="button">
+              <input type="button" value="Send Now" >
+            </div>
+
+          </form>
         </div>
-        <div class="right-side">
-          <div class="topic-text">Habla con nosotros</div>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam aliquid animi explicabo tempore corrupti suscipit eveniet libero.</p>
-        <form action="#">
-          <div class="input-box">
-            <input type="text" placeholder="Enter your name">
-          </div>
-          <div class="input-box">
-            <input type="text" placeholder="Enter your email">
-          </div>
-          <div class="input-box message-box">
-            <textarea></textarea>
-          </div>
-          
-          <div class="button">
-            <input type="button" value="Send Now" >
-          </div>
-
-        </form>
+        </div>
       </div>
+
+      <div class="wa-container">
+        <a href="https://wa.me/51998001467" class="wa-link">
+          <img src="../../assets/img/logo/logo-whatsapp-png-46048.png" style="height: 70px;"/>
+        </a>
       </div>
-    </div>
 
-    <div class="wa-container">
-      <a href="https://wa.me/51998001467" class="wa-link">
-        <img src="../../assets/img/logo/logo-whatsapp-png-46048.png" style="height: 70px;"/>
-      </a>
-    </div>
+      <footer>
+        <h1>© AromaCoffee</h1>
+      </footer>
 
-    <script src="/js/header.js"></script>
-    
-</body>
+      <script src="/js/header.js"></script>
+  </body>
 </html>

@@ -2,16 +2,18 @@ let productList = JSON.parse(localStorage.getItem('products'));
 
 let card = document.querySelector('.cards');
 
-function renderizarCatalogo() {
+let messageFiltro = document.querySelector('#message-filtro');
 
+let filtro = document.querySelector('#filtro');
+
+function renderizarCatalogo() {
     card.innerHTML = '';
 
-    productList = JSON.parse(localStorage.getItem('products'));
+    //productList = JSON.parse(localStorage.getItem('products'));
 
-    let index=0;
+    let index = 0;
     
     productList.forEach((producto) => {
-
         let imageSrc = producto.image ? producto.image : '/assets/img/products/no-product.png';
 
         const card_item = `
@@ -21,15 +23,29 @@ function renderizarCatalogo() {
                         <div class="card_content">
                             <h2 class="card_title">${producto.name}</h2>
                             <p class="card_text">S/${producto.price}</p>
-                            <button class="btn card_btn" onclick='location.href="../pages/product/product.html?id=${index}"'>Comprar</button>
+                            <button class="btn_catalogo card_btn" onclick='location.href="../pages/product/product.html?id=${index}"'>Comprar</button>
                         </div>
                     </div>
                 </li>`
-                            // onclick='console.log("${index}")'
-        card.innerHTML += card_item;
-        index+=1;
-    });
 
+        card.innerHTML += card_item;
+
+        index += 1;
+
+        if (index != 0) {
+            messageFiltro.innerHTML = `Se encontraron ${index} productos`;
+        } else {
+            messageFiltro.innerHTML = `No existen coincidencias`;
+        }
+    });
+}
+
+function searchProducts() {
+    productList = productList.filter((item) => (item.name).toLowerCase().includes((filtro.value).toLowerCase()));
+
+    renderizarCatalogo();
+
+    productList = JSON.parse(localStorage.getItem('products'));
 }
 
 renderizarCatalogo();

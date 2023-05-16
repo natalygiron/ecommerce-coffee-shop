@@ -1,3 +1,9 @@
+let myUserControl = JSON.parse(localStorage.getItem('myUser'));
+
+if (myUserControl?.rol == 'ADMIN') {
+  document.querySelector('.dropdown').setAttribute('style', 'display:inline !important');
+}
+
 // Validar que exista usuario y cambiar botón Cuenta / Cerrar sesión
 function isLogged() {
     let user = JSON.parse(localStorage.getItem('myUser'));
@@ -12,7 +18,10 @@ function isLogged() {
           Swal.fire({
             title: 'Bye!',
             icon: 'success',
-            background: '#fff'
+            background: '#fff',
+            timer: 3000
+          }).then(() => {
+            window.location.reload();
           }) 
         }
     }

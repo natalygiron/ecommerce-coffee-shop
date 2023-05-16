@@ -14,55 +14,62 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div class="logo"><img src="./../assets/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png"></div>
-            <div class="barnav">
-              <div><a href="../../index.html">Tienda</a></div>
-              <div><a href="../about-us/about-us.html">Nosotros</a></div>
-              <div><a href="../contact/contact.html">Contacto</a></div>
-              <div id="account"><a href="../login/login.html">Cuenta</a></div>
-              <div><a href="#"><i class="fa fa-shopping-cart"></i></a></div>
-            </div>
-        </nav>
-    </header>
-       
-    <div class="container">
-        
-        <div class="title">Login</div>
-        <div class="content">
-          <form id="loginform">
-            <div class="user-details">
-              <div class="input-box">
-                <span class="details">Email</span>
-                <input type="text" name="email" minlength="12" placeholder="Ingrese su email" required>
-              </div>
-              <div class="input-box">
-                <span class="details">Contraseña</span>
-                <input type="password" name="password" minlength="8" placeholder="Ingrese su contraseña" required>
-              </div>
-            </div>
-            <!-- <div class="img-banner">
-                <img src="https://www.nespresso.com/ecom/medias/sys_master/public/15970493104158/Coffee-Profiler2022-Card-Highlight-Lifestyle-720x400-v1.jpg?impolicy=small&imwidth=574&imdensity=1" style="display:flex; width: 100%; height: auto; border-radius: 5px; filter: brightness(70%);" />
-            </div> -->
-            <div class="button">
-              <input type="submit" class="btn" value="Ingresar">
-            </div>
-            <div class="register-link">
-                <a href="../register/register.html">¿No tienes cuenta? Registrarse</a>
-            </div>
-          </form>
+  <header>
+    <nav>
+      <div class="logo"><img src="../../assets/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png"></div>
+      <div class="barnav">
+        <div><a href="/index.html">Tienda</a></div>
+        <div><a href="/pages/about-us/about-us.html">Nosotros</a></div>
+        <div><a href="/pages/contact/contact.html">Contacto</a></div>
+        <div id="account"><a href="/pages/login/login.html">Cuenta</a></div>
+        <div><a><i class="fa fa-shopping-cart"></i></a></div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-cog"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/pages/admin/admin_user.html">Administrador usuarios</a></li>
+            <li><a class="dropdown-item" href="/pages/admin/admin_product.html">Administrador productos</a></li>
+          </ul>
         </div>
       </div>
+    </nav>
+  </header>
 
-      <div class="wa-container">
-        <a href="https://wa.me/51998001467" class="wa-link">
-          <img src="../../assets/img/logo/logo-whatsapp-png-46048.png" style="height: 70px; "/>
-        </a>
-      </div>
-    
-      <script src="/js/login.js"></script>
-      <script src="/js/header.js"></script>
+  <div class="wa-container">
+    <a href="https://wa.me/51998001467" class="wa-link">
+      <img src="../../assets/img/logo/logo-whatsapp-png-46048.png" style="height: 70px; "/>
+    </a>
+  </div>
+
+  <div class="container">
+    <div class="title">Login</div>
+    <div class="content">
+      <form id="loginform">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" name="email" minlength="12" placeholder="Ingrese su email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Contraseña</span>
+            <input type="password" name="password" minlength="8" placeholder="Ingrese su contraseña" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" class="btn" value="Ingresar">
+        </div>
+        <div class="register-link">
+            <a href="../register/register.html">¿No tienes cuenta? Registrarse</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <h1>© AromaCoffee</h1>
+  </footer>
+  <script src="/js/login.js"></script>
+  <script src="/js/header.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin Productos</title>
-        <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+        <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/admin.css">
         <!-- Fontawesome CDN Link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -19,8 +19,8 @@
         <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
         
-        <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
-        <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+        <!-- <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css"> -->
+        <!-- <script src="sweetalert2/dist/sweetalert2.min.js"></script> -->
         <!-- <script src="/js/admin/products.js"></script> -->
     </head>
   <body>
@@ -31,20 +31,19 @@
             	<img src="https://aromacoffee-ecommerce.netlify.app/assets/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png">
             </div>
             <div class="barnav">
-            	<div>
-                	<a href="./index.html">Tienda</a>
-                </div>
-                <div>
-                	<a href="./pages/about-us/about-us.html">Nosotros</a>
-                </div>
-                <div>
-                	<a href="./pages/contact/contact.html">Contacto</a>
-                </div>
-                <div>
-                	<a href="./pages/login/login.html">Cuenta</a>
-                </div>
-                <div>
-                	<a href="#"><i class="fa fa-shopping-cart"></i></a>
+                <div><a href="/index.html">Tienda</a></div>
+                <div><a href="/pages/about-us/about-us.html">Nosotros</a></div>
+                <div><a href="/pages/contact/contact.html">Contacto</a></div>
+                <div id="account"><a href="/pages/login/login.html">Cuenta</a></div>
+                <div><a><i class="fa fa-shopping-cart"></i></a></div>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-cog"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/pages/admin/admin_user.html">Administrador usuarios</a></li>
+                    <li><a class="dropdown-item" href="/pages/admin/admin_product.html">Administrador productos</a></li>
+                  </ul>
                 </div>
             </div>
         </nav>
@@ -55,9 +54,9 @@
         <div class="main">
             <div class="container-cart">
                 <h1>ADMINISTRADOR DE PRODUCTOS</h1>
-                <p>Hay un total de X productos</p>
+                <p class="count-products">Hay un total de X productos</p>
 
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="producto">Agregar producto</button>
+                <button type="button" class="btn btn-primary btn-product" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="producto">Agregar producto</button>
                 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
                     <div class="modal-dialog">

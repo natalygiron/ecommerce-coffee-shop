@@ -17,7 +17,7 @@ function getProduct() {
     const item = `
                 <!-- Left Column -->
                 <div class="left-column">
-                    <img data-image="red" class="active" src="${imageSrc}" alt="">
+                    <img class="active" src="${imageSrc}" alt="">
                 </div>
             
                 <!-- Right Column -->
@@ -31,26 +31,17 @@ function getProduct() {
                     </div>
                     <!-- Product Configuration -->
                     <div class="product-configuration">
-                        <!-- Product size -->
-                        <div class="cable-config">
-                        <span>Elige una opción</span>
-                        <div class="cable-choose">
-                            <button>480 ml</button>
-                            <button>300 ml</button>
-                            <!-- <button>Long-coiled</button> -->
-                        </div>
-                        </div>
                         <span>Existencias: ${product.stock} disponibles</span>
                         <!-- Product Color -->
                         <div class="product-amount">
-                        <span>Cantidad</span>
-                
-                        <div class="amount-choose">
-                            <div>
-                            <input type="number" id="amount" name="amount" value="1" checked><label for="amount"><span></span></label>
-                            </div>    
+                            <span>Cantidad:</span>
+                    
+                            <div class="amount-choose">
+                                <div>
+                                <input type="number" id="amount" name="amount" value="1" checked><label for="amount"><span></span></label>
+                                </div>    
+                            </div>
                         </div>
-
                     </div>
                     <!-- Product Pricing -->
                     <div class="product-price">
@@ -63,8 +54,6 @@ function getProduct() {
     container.innerHTML += item;
 
 }
-
-getProduct();
 
 function addCarrito() {
 
@@ -111,9 +100,8 @@ function addCarrito() {
         background: '#fff',
         title: 'Tu producto ha sido agregado al carrito',
         showConfirmButton: false,
-        timer: 50000
+        timer: 2000
     })
 }
 
-
-
+getProduct();

@@ -8,6 +8,7 @@
 body{
   height: 100vh;
   display: flex;
+  flex-direction: column;
   /* justify-content: center;
   align-items: center; */
   /* padding: 10px; */
@@ -17,7 +18,7 @@ body{
 .container{
   flex-direction: column;
   top: 30px;
-  margin: auto;
+  margin: 120px auto 40px auto;
   max-width: 700px;
   width: 100%;
   background-color: #fff;
@@ -190,4 +191,10 @@ form .user-details .input-box{
     color: #7FB3A7;
     font-weight: 600;
     text-decoration: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

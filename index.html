@@ -10,6 +10,11 @@
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
@@ -19,11 +24,20 @@
         <nav>
             <div class="logo"><img src="/assets/img/logo/logo_aromacoffee_sinicon_sm-removebg-preview.png"></div>
             <div class="barnav">
-              <div><a href="./index.html">Tienda</a></div>
-              <div><a href="./pages/about-us/about-us.html">Nosotros</a></div>
-              <div><a href="./pages/contact/contact.html">Contacto</a></div>
-              <div id="account"><a href="./pages/login/login.html">Cuenta</a></div>
+              <div><a href="/index.html">Tienda</a></div>
+              <div><a href="/pages/about-us/about-us.html">Nosotros</a></div>
+              <div><a href="/pages/contact/contact.html">Contacto</a></div>
+              <div id="account"><a href="/pages/login/login.html">Cuenta</a></div>
               <div><a><i class="fa fa-shopping-cart"></i></a></div>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-cog"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/pages/admin/admin_user.html">Administrador usuarios</a></li>
+                  <li><a class="dropdown-item" href="/pages/admin/admin_product.html">Administrador productos</a></li>
+                </ul>
+              </div>
             </div>
         </nav>
     </header>
@@ -42,6 +56,15 @@
           </div>
 
           <h1>Productos destacados</h1>
+
+          <div class="searchcontainer">
+            <p>
+              <input id="filtro" type="search" placeholder="Producto..." class="imputSearch">
+              <button class="buttonSearch" onclick="searchProducts()"><i class="fa fa-search"></i></button>
+            </p>
+            <p id="message-filtro"></p>
+          </div>
+
           <ul class="cards">
             <!-- Cargar productos -->
             
@@ -61,6 +84,7 @@
     </footer>
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="/js/local-storage/charger.js"></script>
     <script src="/js/product.js"></script>
     <script src="/js/header.js"></script>
 </body>

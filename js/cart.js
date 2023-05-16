@@ -1,4 +1,7 @@
 let cart = JSON.parse(localStorage.getItem('carrito'));
+let userInfo = JSON.parse(localStorage.getItem('myUser'));
+
+let userMail = userInfo.email;
 
 let content = document.querySelector('.cart-content');
 // console.log(content)
@@ -9,38 +12,42 @@ function renderizarCarrito() {
 
     let index = 0;
     let total = 0;
+
     cart.forEach((item) => {
 
-        let imageSrc = item.image ? item.image : '/assets/img/products/no-product.png';
-        let item_total = ((item.quantity)*(item.price)).toFixed(2);
-        
-        let cart_item = `
-                        <tr>
-                            <td class="t-table-cart-img">
-                            <img src="${imageSrc}" class="img-cart"/>
-                            </td>
-                            <td class="t-table-cart" class="name">${item.name}</td>
-                            <td class="t-table-cart">${item.description}</td>
-                            <td class="t-table-cart qnt-btn">
-                                <i class="far fa-minus-square btn-minus" onclick='editQuantity(${index})'></i>
-                                <p id="quantity" name="quantity" class="input-quantity-cart" >${item.quantity}</p>
-                                <i class="far fa-plus-square btn-plus"></i>
-                            </td>
-                            <td class="t-table-cart">S/${item.price}</td>
-                            <td class="t-table-cart">S/${item_total}</td>
-                            <td class="t-table-cart-x">
-                                <i class='fa fa-times-circle' onclick=deleteProduct(${index})></i>
-                            </td>
-                        </tr>`
-                            // onclick='console.log("${index}")'
-        content.innerHTML += cart_item;
-        index+=1;
-        total+=Number(item_total);
-    });
-    document.querySelector(".total").innerHTML = 'S/'+total
-}
+        if (item.user == userMail) {
+            let imageSrc = item.image ? item.image : '/assets/img/products/no-product.png';
+            let item_total = ((item.quantity)*(item.price)).toFixed(2);
+            
+            let cart_item = `
+                            <tr>
+                                <td class="t-table-cart-img">
+                                <img src="${imageSrc}" class="img-cart"/>
+                                </td>
+                                <td class="t-table-cart" class="name">${item.name}</td>
+                                <td class="t-table-cart qnt-btn">
+                                    <i class="far fa-minus-square btn-minus" onclick='editQuantity(${index},"minus")'></i>
+                                    <p id="quantity" name="quantity" class="input-quantity-cart" >${item.quantity}</p>
+                                    <i class="far fa-plus-square btn-plus" onclick='editQuantity(${index},"plus")'></i>
+                                </td>
+                                <td class="t-table-cart">S/${item.price}</td>
+                                <td class="t-table-cart">S/${item_total}</td>
+                                <td class="t-table-cart-x">
+                                    <i class='fa fa-times-circle' onclick=deleteProduct(${index})></i>
+                                </td>
+                            </tr>`
 
-renderizarCarrito();
+            content.innerHTML += cart_item;
+
+            index+=1;
+            
+            total+=Number(item_total);
+        }
+
+    });
+
+    document.querySelector(".total").innerHTML = 'S/' + total.toFixed(2);
+}
 
 function deleteProduct(ix) {
     
@@ -60,22 +67,23 @@ function deleteProduct(ix) {
             localStorage.setItem('carrito', JSON.stringify(cart));
         
             renderizarCarrito();
-
-        //   Swal.fire({
-        //     title: 'Producto eliminado!',
-        //     icon: 'success',
-        //     background: '#fff'
-        //   })
         }
       })
 }
 
 function editQuantity(ix, type) {
 
-    let item = cart[ix];
-    item.quantity-=1;
+    if(type == 'minus') {
+        let item = cart[ix];
+        item.quantity-=1;
+    } else if (type == 'plus') {
+        let item = cart[ix];
+        item.quantity+=1;
+    }
     
     localStorage.setItem('carrito', JSON.stringify(cart));
     renderizarCarrito();
 
 }
+
+renderizarCarrito();

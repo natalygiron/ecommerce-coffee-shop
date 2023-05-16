@@ -18,7 +18,7 @@ body{
 .container{
   /* display: flex;
   flex-direction: row; */
-  margin: auto;
+  margin: 150px auto 40px auto;
   
   width: 85%;
   height: 85%;
@@ -160,6 +160,10 @@ body{
     font-size: 12px
  }
 
-
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

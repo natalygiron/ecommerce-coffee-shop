@@ -11,13 +11,14 @@ registerForm.addEventListener("submit", (e) => {
     // Obtener usuarios
     const users = JSON.parse(localStorage.getItem('users')) || []; 
 
-    console.log(data.email.value, data.dni.value);
     // Validar que no exista un usuario con ese email o DNI
     const userExist = validateUser(users, data.email.value, data.dni.value);
+    
+
     console.log('exist ',userExist);
 
-    if (userExist) return alert(`Este usuario ya está registrado`);
-    if (data.password.value !== data.confirm_password.value) return alert(`Las contraseñas no coinciden`);
+    if (userExist) return Swal.fire(`Este usuario ya está registrado`);
+    if (data.password.value !== data.confirm_password.value) return Swal.fire(`Las contraseñas no coinciden`);
 
     // Validar contraseñas sean iguales
     // if(data.password.value !== data.confirm_password.value) return 
@@ -30,23 +31,26 @@ registerForm.addEventListener("submit", (e) => {
         phone:  data.phone.value,
         password: data.password.value,
         confirm_password: data.confirm_password.value,
-        gender: data.gender.value
+        gender: data.gender.value,
+        rol: 'USER'
     }
 
     // Insertar nuevo usuario en array users
-    users.push(user)
+    users.push(user);
 
     // Guardar en localStorage
     localStorage.setItem('users', JSON.stringify(users))
-    console.log(JSON.parse(localStorage.getItem('users')))
     
-    alert('El usuario ha sido registrado');
+    Swal.fire('El usuario ha sido registrado');
+    // Swal.fire({
+    //   title: 'Producto eliminado!',
+    //   icon: 'success',
+    //   background: '#fff'
+    // })
 
     // Limpiar formulario y redirigir al home
     registerForm.reset
     window.location.href = '/pages/login/login.html'
-    
-
 })
 
 function validateUser(users, email, dni){

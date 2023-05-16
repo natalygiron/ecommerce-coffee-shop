@@ -134,14 +134,14 @@ footer {
 }
 
 .table-cart {
-    text-align: left;
+    text-align: center;
+    margin: auto;
 }
 
 .th-table-cart {
-    padding-right: 1rem;
+  padding-right: 1rem;
   background-color: #B37F87;
   text-align: center;
-  
 }
 
 .t-table-cart {
@@ -179,12 +179,13 @@ footer {
 }
 
 .container-cart-button {
-    margin-top: 2rem;
+  margin-top: 2rem;
+  width: 90%;
   text-align: right;
 }
 
 .button-cart {
-    padding: 10px 20px;
+  padding: 10px 20px;
   text-decoration: none;
   text-align: center;
   line-height: 2;

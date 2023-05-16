@@ -32,7 +32,7 @@ body {
 }
 
 .main{
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
 }
 
@@ -63,7 +63,7 @@ nav .logo{
 
 nav .barnav{
   display:grid;
-  grid-template-columns: repeat(5,auto);
+  grid-template-columns: repeat(6,auto);
   margin-right: 30px;
 }
 
@@ -90,8 +90,6 @@ nav .barnav div:hover, nav .barnav div a:hover{
   /* background:#769A9C; */
   /* background:#CDDC39; */
 }
-
-
 
 /* Carousel */
 .carousel {
@@ -130,7 +128,7 @@ img {
   vertical-align: middle;
 }
 
-.btn {
+.btn_catalogo {
   color: #ffffff;
   padding: 0.8rem;
   font-size: 14px;
@@ -295,9 +293,6 @@ footer {
   height: 200px;
   padding: inherit;
   background: #EEE;
-  /* background-color: #c8e8e9; */
-  /* background-color: #CBE8C8; */
-  /* background-color: #769A9C; */
   color: aliceblue;
 }
 
@@ -305,4 +300,42 @@ footer {
   margin: auto;
   color: white;
   padding: 15px 0;
+}
+
+/* Buscador */
+.searchcontainer {
+  text-align: center;
+}
+
+.imputSearch {
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #272727;
+  border-radius: 5px;
+}
+
+.buttonSearch {
+  padding: 0.5rem;
+  border: 1px solid #272727;
+  border-radius: 15px;
+  background-color: moccasin;
+  cursor: pointer;
+}
+
+/* Admin */
+.dropdown {
+  display: none !important;
+  margin: auto;
+}
+
+.btn-secondary {
+  --bs-btn-color: #000 !important;
+  --bs-btn-bg: transparent !important;
+  --bs-btn-border-color: transparent !important;
+  --bs-btn-hover-color: #fff !important;
+  --bs-btn-hover-bg: transparent !important;
+  --bs-btn-hover-border-color: transparent !important;
+  --bs-btn-active-color: #fff !important;
+  --bs-btn-active-bg: transparent !important;
+  --bs-btn-active-border-color: transparent !important;
 }
