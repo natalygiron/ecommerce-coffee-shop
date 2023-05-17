@@ -16,12 +16,13 @@ function isLogged() {
           localStorage.removeItem('myUser');
           cuenta.innerHTML = `<a href="./pages/login/login.html">Cuenta</a>`;
           Swal.fire({
-            title: 'Bye!',
+            title: '¡Hasta pronto!',
             icon: 'success',
             background: '#fff',
             timer: 3000
           }).then(() => {
             window.location.reload();
+            window.location.href = '/'; 
           }) 
         }
     }

@@ -20,10 +20,6 @@ registerForm.addEventListener("submit", (e) => {
     if (userExist) return Swal.fire(`Este usuario ya está registrado`);
     if (data.password.value !== data.confirm_password.value) return Swal.fire(`Las contraseñas no coinciden`);
 
-    // Validar contraseñas sean iguales
-    // if(data.password.value !== data.confirm_password.value) return 
-
-    // index, fullname, dni, email, phone, password, confirm_password, gender.
     const user = {
         fullname: data.fullname.value,
         dni: data.dni.value,
@@ -42,11 +38,6 @@ registerForm.addEventListener("submit", (e) => {
     localStorage.setItem('users', JSON.stringify(users))
     
     Swal.fire('El usuario ha sido registrado');
-    // Swal.fire({
-    //   title: 'Producto eliminado!',
-    //   icon: 'success',
-    //   background: '#fff'
-    // })
 
     // Limpiar formulario y redirigir al home
     registerForm.reset

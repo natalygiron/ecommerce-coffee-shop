@@ -28,7 +28,7 @@ loginForm.addEventListener('submit', (e) => {
     localStorage.setItem('myUser', JSON.stringify(myUser));
 
     //TODO: insertar alerta custom
-    Swal.fire('¡Hola de nuevo!');
+    Swal.fire('Bienvenido de nuevo!');
 
     setTimeout(()=>{
         window.location.href = '/'; 
